@@ -1,0 +1,30 @@
+<div *ngIf="!name; else forminfo" class="form-group">
+<form [formGroup]="nForm" (ngSubmit)="addPost(nForm.value)">
+      <h1>Marvellous Feedback Form</h1>
+      
+      <div>
+      <label> Students Name
+          <input type="text" formControlName="name">
+      </label>
+      </div>
+
+      <div>
+      <label> Your Feedback
+        <input type="text" formControlName="description" >
+      </label>
+      </div>
+
+    <div>
+      <button class="btn btn-primary" [disabled]="!nForm.valid">Submit</button>
+    </div>
+</form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>save data in class charecterstic</h1>
+     
+    </div>
+  </div>
+</ng-template>

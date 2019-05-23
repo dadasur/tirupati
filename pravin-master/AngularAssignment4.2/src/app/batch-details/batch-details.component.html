@@ -1,0 +1,7 @@
+<h3>Student Details of Marvellous Infosystems</h3>
+
+<!--Display contents from batches array-->
+<button  (click)="fun()">Send Event</button>
+<ul *ngFor="let value of batches">
+  <li>{{value.Name}} - {{value.Collage}} - {{value.Id}}</li>
+</ul>

@@ -1,0 +1,47 @@
+<div class="container">           <!--Create container-->
+
+  <div class="row">               <!-- Add new row to container-->
+    <div class="col-xs-15">       <!-- Add column of width 15-->
+      <h1>Marvellous Infosystems Subjects</h1>  <!--Add headerh and name-->
+
+      <label>Subject Name</label>   <!--Add on lebel-->
+      <input type="text" class="form-control" [(ngModel)]="SubjectName">  <!--Store contents into SubjectName-->
+      <br>                        <!--Add line break-->
+      <br>
+      <label>Subjects Content</label> 
+      <input type="text" class="form-control" [(ngModel)]="SubjectContent"> <!--Store contents into SubjectContent-->
+      <br>
+      <br>
+      <br>
+
+      <!-- Create button-->
+      <button
+        class="btn btn-primary"   
+        (click)="onAddSubject()">Add Subject</button>   <!--Add listener for button-->
+        
+      <!-- Create button-->
+        <button
+        class="btn btn-primary"
+        (click)="onAddPractical()">Add Practical</button> <!--Add listener for button-->
+    
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">             <!-- Add new row to container-->
+    <div class="col-xs-15">     <!-- Add new column to container-->
+      <!-- Add panel-->
+      <div
+        class="panel panel-default"      
+        *ngFor="let element of SubArr"> <!--Iterate element form SubArr into elelemnt-->
+        <div class="panel-heading">{{ element.name }}</div>
+        <div class="panel-body">  
+          <p> <!--Display subject name in red and practicalin blue-->
+            <strong *ngIf="element.type === 'subject'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'practical'">{{ element.content }}</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>                          <!--End of container-->
